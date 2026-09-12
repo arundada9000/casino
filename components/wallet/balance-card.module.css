@@ -1,0 +1,79 @@
+.card {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: var(--a-color-surface, #11151f);
+  border: 1px solid var(--a-color-border, rgba(233, 236, 244, 0.16));
+  border-radius: var(--a-radius-lg, 16px);
+  box-shadow: var(--a-shadow-1, none);
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform var(--a-duration-quick, 80ms) var(--a-ease-out, ease),
+    background-color var(--a-duration-fast, 140ms) var(--a-ease-standard, ease);
+}
+
+.card[data-pressable] {
+  cursor: pointer;
+}
+
+.card[data-pressable]:active {
+  transform: scale(0.99);
+  background: var(--a-color-surfacePressed, #1b2130);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: var(--a-type-caption, 12px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--a-color-textMuted, #7d8494);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--a-color-accent, #d0a96f);
+}
+
+.balance {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 2px 0 0;
+}
+
+.amount {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--a-color-textPrimary, #e9ecf4);
+  font-family: var(--a-font-mono, ui-monospace, monospace);
+}
+
+.unit {
+  font-size: var(--a-type-footnote, 13px);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--a-color-textMuted, #7d8494);
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  font-size: var(--a-type-footnote, 13px);
+  color: var(--a-color-textSecondary, #b9bfcc);
+}

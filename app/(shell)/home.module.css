@@ -1,0 +1,82 @@
+.section {
+  margin: 20px 0;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 10px;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: var(--a-type-caption, 12px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--a-color-textMuted, #7d8494);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.welcome {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 4px;
+  padding: 16px;
+  background: var(--a-color-accentSoft, rgba(208, 169, 111, 0.16));
+  border: 1px solid var(--a-color-accentSoftStrong, rgba(208, 169, 111, 0.26));
+  border-radius: var(--a-radius-lg, 16px);
+}
+
+.welcomeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  color: var(--a-color-textOnAccent, #14100a);
+  background: var(--a-color-accent, #d0a96f);
+}
+
+.welcomeBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.welcomeBody h2 {
+  margin: 2px 0 2px;
+  font-size: var(--a-type-headline, 17px);
+  font-weight: 600;
+  color: var(--a-color-textPrimary, #e9ecf4);
+}
+
+.welcomeBody p {
+  margin: 0;
+  font-size: var(--a-type-footnote, 13px);
+  color: var(--a-color-textSecondary, #b9bfcc);
+}
+
+.welcome button {
+  flex: none;
+  align-self: center;
+}
+
+@media (max-width: 380px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome {
+    flex-wrap: wrap;
+  }
+}

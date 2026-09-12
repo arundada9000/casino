@@ -1,0 +1,40 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 28px 16px 24px;
+}
+
+.mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  color: var(--a-color-textOnAccent, #14100a);
+  background: var(--a-color-accent, #d0a96f);
+  box-shadow: var(--a-shadow-2, none);
+}
+
+.name {
+  margin: 6px 0 0;
+  font-size: var(--a-type-title2, 24px);
+  font-weight: 700;
+  color: var(--a-color-textPrimary, #e9ecf4);
+}
+
+.tagline {
+  margin: 0;
+  max-width: 360px;
+  font-size: var(--a-type-subheadline, 15px);
+  color: var(--a-color-textSecondary, #b9bfcc);
+}
+
+.version {
+  margin: 6px 0 0;
+  font-size: var(--a-type-caption, 12px);
+  color: var(--a-color-textMuted, #7d8494);
+}
