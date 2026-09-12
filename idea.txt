@@ -1,0 +1,1268 @@
+# Build a Premium Fictional Casino Simulation App
+
+You are building a polished, production-grade fictional casino simulation application designed to feel like a real native product on both **iPhone/iPad and macOS**.
+
+This is a **virtual entertainment and simulation app only**.
+
+There must be:
+
+* No real-money gambling
+* No deposits
+* No withdrawals
+* No cash-out
+* No cryptocurrency
+* No prizes with monetary value
+* No payment processing
+* No mechanism that converts virtual credits into real-world value
+
+All currency in the application is fictional and exists only for gameplay.
+
+The product should feel sophisticated, immersive, tactile, and premium rather than like a simple gambling website.
+
+---
+
+# 1. PRODUCT VISION
+
+Create a fictional casino environment where users receive virtual credits and can spend those credits inside several simulated casino-style games.
+
+The application should eventually contain games such as:
+
+* Roulette
+* Blackjack
+* Slots
+* Dice
+* Coin Flip
+* Crash
+* Mines
+* Plinko
+* Wheel
+* Hi-Lo
+
+However:
+
+## DO NOT BUILD ALL OF THESE AT ONCE.
+
+The entire project must be developed incrementally.
+
+The application must always remain runnable and usable after every milestone.
+
+A future feature may exist in the architecture conceptually, but it must NOT be implemented until its milestone is explicitly activated.
+
+---
+
+# 2. ABSOLUTE DEVELOPMENT RULE
+
+This is the most important instruction in this entire specification.
+
+## BUILD ONE MILESTONE AT A TIME.
+
+Never implement multiple future milestones in one pass.
+
+Never say:
+
+> "I also went ahead and added the other games."
+
+Do not do that.
+
+When a milestone is completed:
+
+1. Finish the milestone properly.
+2. Test it.
+3. Fix its obvious issues.
+4. Update the project tracker.
+5. Update relevant documentation.
+6. Ensure the application still runs cleanly.
+7. Clearly report what changed.
+8. Clearly report what should be manually tested.
+9. STOP.
+
+Do not begin the next milestone automatically.
+
+Wait until the developer/user explicitly instructs you to continue.
+
+The project must be built through a sequence of deliberate verification gates.
+
+---
+
+# 3. DEVELOPMENT MILESTONE SYSTEM
+
+Use this roadmap as the project's long-term development plan.
+
+## MILESTONE 0
+
+### Project Foundation
+
+Build only:
+
+* Project structure
+* Technology setup
+* TypeScript configuration
+* Application bootstrap
+* Native shell configuration
+* Basic routing/navigation architecture
+* State-management architecture
+* Persistence architecture
+* Design-token architecture
+* Theme architecture
+* Sound/haptic abstraction layer
+* Game-engine abstraction layer
+* Virtual-credit economy abstraction
+* Error handling foundation
+* Logging/debugging foundation
+* Testing foundation
+* Documentation foundation
+* Development tracker
+
+Do not build a complete game yet.
+
+The application should launch successfully on the intended platforms.
+
+---
+
+# MILESTONE 1
+
+## Core App Shell
+
+Build:
+
+* Main application shell
+* Home screen
+* Game library
+* Virtual wallet/balance
+* Activity/history foundation
+* Profile
+* Settings
+* Navigation
+* Theme selection
+* Sound settings
+* Haptic settings
+* Basic onboarding
+* Empty states
+* Loading states
+* Error states
+* About/legal information explaining that credits have no monetary value
+
+Do not build full casino games yet.
+
+The shell should already feel like a finished premium application even if the game library is initially mostly empty.
+
+---
+
+# MILESTONE 2
+
+## First Game: Coin Flip
+
+Implement exactly one game.
+
+Coin Flip should establish the first complete game lifecycle:
+
+* Game entry
+* Bet amount
+* Heads/tails selection
+* Confirmation
+* Game animation
+* Result
+* Win/loss state
+* Credit transaction
+* History entry
+* Statistics
+* Reset/new round
+* Error handling
+* Impossible/invalid state prevention
+
+Use a properly abstracted game engine so future games can reuse the same infrastructure.
+
+After implementation, STOP.
+
+---
+
+# MILESTONE 3
+
+## Roulette
+
+Add only Roulette.
+
+Implement:
+
+* European roulette
+* Number betting
+* Red/black
+* Odd/even
+* High/low
+* Dozens
+* Columns
+* Clear bets
+* Undo last bet
+* Spin animation
+* Result calculation
+* Proper virtual-credit transaction
+* Round history
+* Statistics
+* Accessibility
+* Responsive interaction behavior
+
+Do not begin Blackjack, Slots, Crash, Mines, or any other game.
+
+After Roulette is complete, STOP.
+
+---
+
+# MILESTONE 4
+
+## Blackjack
+
+Add only Blackjack.
+
+Implement proper gameplay logic including:
+
+* Player hand
+* Dealer hand
+* Hit
+* Stand
+* Double down
+* Split where supported by the architecture
+* Blackjack detection
+* Bust
+* Dealer rules
+* Round resolution
+* Virtual-credit transactions
+* Animation states
+* History
+* Statistics
+* Invalid-action prevention
+
+Do not touch future games.
+
+STOP after verification.
+
+---
+
+# MILESTONE 5
+
+## Slots
+
+Add only Slots.
+
+Use a configurable slot engine rather than hardcoding the game into UI components.
+
+Support:
+
+* Reels
+* Symbols
+* Paylines
+* Configurable symbols
+* Configurable payouts
+* Spin
+* Stop/result transition
+* Win animation
+* Loss state
+* Auto-reset
+* Statistics
+* History
+* Virtual-credit accounting
+
+The probability model must exist separately from presentation logic.
+
+STOP after verification.
+
+---
+
+# MILESTONE 6
+
+## Dice
+
+Add only Dice.
+
+Implement:
+
+* Dice game interface
+* Prediction/bet configuration
+* Roll
+* Result
+* Win/loss
+* Transaction system
+* Statistics
+* History
+* Animations
+* Accessibility
+
+STOP.
+
+---
+
+# MILESTONE 7
+
+## Crash
+
+Add only Crash.
+
+Implement the complete simulation lifecycle:
+
+* Bet
+* Round start
+* Multiplier progression
+* Cash-out
+* Crash event
+* Win/loss resolution
+* Round history
+* Transaction integrity
+* Animation
+* Sound
+* Statistics
+
+The crash system must not rely on purely visual randomness.
+
+Separate simulation logic from rendering.
+
+STOP.
+
+---
+
+# MILESTONE 8
+
+## Mines
+
+Add only Mines.
+
+Implement:
+
+* Configurable board
+* Safe tiles
+* Mines
+* Reveal
+* Current multiplier
+* Virtual cash-out
+* Round completion
+* Game-over states
+* Transaction integrity
+* Statistics
+* History
+
+STOP.
+
+---
+
+# MILESTONE 9
+
+## Plinko
+
+Add only Plinko.
+
+Implement:
+
+* Configurable board
+* Drop mechanic
+* Ball animation
+* Collision/path simulation
+* Result slot
+* Virtual-credit resolution
+* Statistics
+* History
+* Replay/reset
+
+STOP.
+
+---
+
+# MILESTONE 10
+
+## Wheel / Hi-Lo
+
+Implement these as separate controlled additions.
+
+Never merge two major games into one unreviewed development pass.
+
+---
+
+# MILESTONE 11
+
+## Global Statistics & Simulation Lab
+
+Once the core games are stable, build a dedicated statistics and simulation section.
+
+Show things such as:
+
+* Games played
+* Total virtual credits wagered
+* Total virtual credits won
+* Total virtual credits lost
+* Net balance change
+* Largest win
+* Largest loss
+* Win rate
+* Loss rate
+* Streaks
+* Per-game statistics
+* Session statistics
+* Historical charts
+
+Add an optional developer-oriented simulation laboratory where appropriate.
+
+For example:
+
+* Number of simulated rounds
+* Distribution visualization
+* Outcome frequency
+* Expected return
+* Variance
+* Result distribution
+* Configurable random seed where appropriate
+
+Clearly distinguish simulation data from normal gameplay data.
+
+---
+
+# MILESTONE 12
+
+## Final Product Polish
+
+Only after the gameplay systems are stable should you perform large-scale final polish.
+
+Focus on:
+
+* Animation refinement
+* Performance
+* Accessibility
+* Sound design
+* Haptic behavior
+* Navigation refinement
+* Keyboard shortcuts
+* Context menus
+* Empty states
+* Error states
+* Microinteractions
+* Transitions
+* Loading behavior
+* Responsive behavior
+* Persistence reliability
+* Data integrity
+* Visual consistency
+* Native platform behavior
+* Overall product quality
+
+Do not introduce major gameplay changes during this phase unless specifically instructed.
+
+---
+
+# 4. PLATFORM EXPERIENCE
+
+This must not be designed as a generic responsive website that happens to resize.
+
+## iPhone / iPad
+
+The mobile experience should feel intentionally designed for touch.
+
+Use principles inspired by Apple's Human Interface Guidelines.
+
+Prioritize:
+
+* Safe areas
+* Thumb-friendly controls
+* Bottom tab navigation where appropriate
+* Sheets
+* Full-screen covers when justified
+* Contextual menus
+* Touch gestures
+* Swipe interactions
+* Long press where useful
+* Haptic feedback
+* Appropriate touch target sizes
+* Clear hierarchy
+* Minimal visual clutter
+* Fluid transitions
+* Gesture-friendly interactions
+
+The user should never feel like they are using a desktop interface squeezed into a phone.
+
+---
+
+# 5. macOS EXPERIENCE
+
+The desktop experience should feel like a proper Mac application rather than a web page stretched across a large display.
+
+Use macOS-inspired interaction patterns.
+
+Support where appropriate:
+
+* Sidebar navigation
+* Native-feeling title/header treatment
+* Keyboard navigation
+* Keyboard shortcuts
+* Hover states
+* Right-click/context menus
+* Tooltips
+* Resizable layouts
+* Dense information layouts where appropriate
+* Multi-column layouts
+* Desktop-oriented dialogs
+* Drag and drop where useful
+* Command-based shortcuts
+* Native-style window behavior where supported
+* Mouse precision interactions
+
+A Mac user should immediately understand how the application behaves.
+
+---
+
+# 6. DESIGN DIRECTION
+
+The visual identity should feel like a **premium fictional casino simulation**, not a gambling advertisement.
+
+Possible visual direction:
+
+* Sophisticated
+* Dark and atmospheric
+* Elegant
+* Tactile
+* Cinematic
+* Premium
+* Slightly mysterious
+* Strong typography
+* Excellent spacing
+* Controlled glow
+* Refined surfaces
+* Depth
+* Subtle motion
+
+Avoid visual clichés that make the product look cheap.
+
+Do not create:
+
+* Generic neon casino websites
+* Random gradients everywhere
+* Excessive glassmorphism
+* Giant glowing text
+* Cheap gold effects
+* Overly flashy animations
+* Generic dashboard templates
+* AI-generated-looking layouts
+* Excessive cards
+* Unnecessary decorative elements
+
+Every visual element should have a purpose.
+
+---
+
+# 7. UI/UX QUALITY BAR
+
+Treat the UI as a major product feature.
+
+The application should have:
+
+* Custom buttons
+* Custom segmented controls
+* Custom inputs
+* Custom selectors
+* Custom toggles
+* Custom sliders
+* Custom dialogs
+* Custom sheets
+* Custom tabs
+* Custom betting controls
+* Custom number inputs
+* Custom game states
+* Custom notifications/toasts
+
+Do not blindly use browser-default UI controls.
+
+The components should share a coherent design system.
+
+However, do not over-customize controls to the point of destroying usability.
+
+Use familiar interaction patterns while giving them the visual language of the product.
+
+---
+
+# 8. DESIGN SYSTEM
+
+Create a centralized design system.
+
+Do not scatter visual values throughout the codebase.
+
+Centralize:
+
+* Colors
+* Typography
+* Spacing
+* Radius
+* Shadows
+* Elevation
+* Animation durations
+* Easing curves
+* Breakpoints
+* Icon sizes
+* Control sizes
+* Surface hierarchy
+
+The system must make it easy to modify the entire visual identity later.
+
+Avoid hardcoding values repeatedly throughout components.
+
+---
+
+# 9. THEMING
+
+Build a real theme system rather than a simple light/dark toggle.
+
+Include several carefully designed presets.
+
+For example:
+
+* System
+* Midnight
+* Obsidian
+* Ivory
+* Crimson
+* Emerald
+* Sapphire
+* Violet
+* Sepia
+* Slate
+
+The exact names and visual palettes may be refined later.
+
+Also support:
+
+* System appearance
+* Accent customization where appropriate
+* Persistent theme selection
+* Theme-aware components
+* Accessible contrast
+
+The application must never depend on one hardcoded color palette.
+
+---
+
+# 10. MOTION DESIGN
+
+Animations should communicate state and create tactile feedback.
+
+Use motion for:
+
+* Navigation
+* Page transitions
+* Sheets
+* Dialogs
+* Balance changes
+* Bet placement
+* Game state transitions
+* Winning states
+* Losing states
+* Loading
+* Hover
+* Press
+* Selection
+* Microinteractions
+
+Do not animate everything.
+
+Animations must be:
+
+* purposeful
+* smooth
+* consistent
+* interruptible when appropriate
+* performant
+* accessible
+
+Respect reduced-motion preferences.
+
+---
+
+# 11. SOUND AND HAPTICS
+
+Create an abstraction layer instead of coupling sound/haptics directly to game components.
+
+Support events such as:
+
+* Button tap
+* Selection
+* Bet placement
+* Game start
+* Result
+* Win
+* Loss
+* Error
+* Navigation
+
+Allow users to independently control:
+
+* Sound
+* Haptics
+
+Do not make sound or haptics mandatory.
+
+---
+
+# 12. VIRTUAL CREDIT ECONOMY
+
+Create a proper internal transaction system.
+
+Do not simply mutate a balance variable from random components.
+
+Use a centralized transaction model.
+
+Every balance-changing action should produce an auditable record containing appropriate information such as:
+
+* Transaction ID
+* Timestamp
+* Game
+* Round ID
+* Previous balance
+* Change
+* New balance
+* Reason/type
+
+Example transaction types:
+
+* Initial allocation
+* Daily bonus
+* Bet
+* Win
+* Refund
+* Reset
+* Admin/debug adjustment
+
+Never allow a game component to silently modify the wallet.
+
+All transactions must go through the economy layer.
+
+---
+
+# 13. RANDOMNESS AND GAME LOGIC
+
+Separate:
+
+## Game logic
+
+from:
+
+## Rendering/UI
+
+and:
+
+## Randomness
+
+A game should not calculate probability merely because an animation is currently playing.
+
+Build deterministic, testable game engines.
+
+Where practical:
+
+* Allow seeded randomness in development/testing
+* Keep probability configuration separate
+* Make rules explicit
+* Validate inputs
+* Prevent impossible states
+* Write unit tests for core game logic
+
+The UI should display the result produced by the engine.
+
+The UI must not secretly determine the result.
+
+---
+
+# 14. DATA ARCHITECTURE
+
+Persist necessary application state appropriately.
+
+Potential persistent data includes:
+
+* User profile
+* Virtual balance
+* Game history
+* Transactions
+* Preferences
+* Themes
+* Statistics
+* Achievements
+* Onboarding state
+* Settings
+
+Use a clean data layer.
+
+Components should not directly manipulate persistence APIs everywhere.
+
+---
+
+# 15. GAME ARCHITECTURE
+
+All games should follow a common conceptual structure.
+
+For example:
+
+```text
+Game Definition
+    ↓
+Game State
+    ↓
+Game Engine
+    ↓
+Round Lifecycle
+    ↓
+Economy Transaction
+    ↓
+History
+    ↓
+Statistics
+    ↓
+Presentation
+```
+
+The exact implementation can differ where a game genuinely needs specialized logic, but avoid copy-pasting the same infrastructure into every game.
+
+Create reusable abstractions where they make sense.
+
+Do not prematurely create an absurdly complicated framework.
+
+Use engineering judgment.
+
+---
+
+# 16. ACCESSIBILITY
+
+Treat accessibility as part of the implementation, not a final checklist.
+
+Support:
+
+* Keyboard navigation
+* Focus management
+* Screen-reader-friendly labels
+* Sufficient contrast
+* Reduced motion
+* Appropriate touch target sizing
+* Clear status communication
+* Meaningful button labels
+* Non-color-only indicators
+* Logical navigation order
+
+Game results must never rely solely on color.
+
+---
+
+# 17. ERROR AND EDGE CASE HANDLING
+
+Every game must gracefully handle:
+
+* Invalid bet
+* Insufficient virtual credits
+* Rapid repeated input
+* Double submission
+* Navigation during a round
+* App restart
+* Interrupted animation
+* Unexpected state
+* Corrupted persisted state
+* Extremely large values
+* Zero values
+* Negative values where invalid
+* Duplicate transactions
+* State desynchronization
+
+Never allow a visual animation to imply a result that contradicts the actual game state.
+
+---
+
+# 18. RESPONSIVENESS
+
+Build intentional layouts for:
+
+* Small iPhones
+* Large iPhones
+* iPads
+* MacBooks
+* Large desktop displays
+
+Do not merely stretch the same layout.
+
+Information density should change appropriately between mobile and desktop.
+
+For example:
+
+Mobile:
+
+* focused
+* compact
+* touch-first
+
+Desktop:
+
+* more information visible
+* sidebar
+* wider game surfaces
+* keyboard/mouse interaction
+* richer statistics
+
+---
+
+# 19. NATIVE FEEL
+
+Use the chosen application technology's native capabilities whenever they materially improve the experience.
+
+The final result should feel like:
+
+**an application**
+
+not:
+
+**a web page installed as an application**.
+
+Use native platform capabilities responsibly.
+
+Avoid unnecessary platform-specific divergence when shared architecture is sufficient.
+
+---
+
+# 20. DEVELOPMENT TRACKER
+
+Create a file such as:
+
+```text
+docs/development-tracker.md
+```
+
+Track:
+
+* Current milestone
+* Completed milestones
+* Pending milestones
+* Current features
+* Known issues
+* Manual verification checklist
+* Architecture decisions
+* Deferred ideas
+* Technical debt
+* Last completed milestone
+
+Example:
+
+```text
+Current Milestone: 2
+
+Completed:
+- Milestone 0
+- Milestone 1
+
+In Progress:
+- Milestone 2
+
+Blocked:
+- None
+
+Manual Verification:
+- [ ] Launch application
+- [ ] Create virtual bet
+- [ ] Complete coin flip
+- [ ] Confirm balance update
+- [ ] Confirm transaction history
+- [ ] Confirm persistence
+- [ ] Confirm restart behavior
+```
+
+Do not mark a feature complete simply because code exists.
+
+It must actually be functional.
+
+---
+
+# 21. DOCUMENTATION
+
+Maintain professional documentation.
+
+At minimum:
+
+```text
+README.md
+docs/
+    architecture.md
+    development-tracker.md
+    game-engine.md
+    economy.md
+    design-system.md
+    testing.md
+```
+
+Only create additional documents when they genuinely improve maintainability.
+
+Documentation should describe the actual implementation, not an imagined future implementation.
+
+Update documentation as architecture evolves.
+
+---
+
+# 22. TESTING
+
+Each milestone must include appropriate tests.
+
+At minimum:
+
+* Unit tests for game logic
+* Unit tests for economy calculations
+* Persistence tests where appropriate
+* Component tests where useful
+* Edge-case tests
+* Regression tests for previously completed milestones
+
+Most importantly:
+
+## NEVER BREAK PREVIOUSLY COMPLETED GAMES.
+
+When a new game is added, existing games must continue to work.
+
+---
+
+# 23. MANUAL VERIFICATION GATE
+
+At the end of every milestone, provide a concise verification report.
+
+Use this structure:
+
+```text
+MILESTONE COMPLETE
+
+Implemented:
+- ...
+
+Changed:
+- ...
+
+Tests:
+- ...
+
+Manual verification:
+1. ...
+2. ...
+3. ...
+
+Known limitations:
+- ...
+
+Next milestone:
+- ...
+```
+
+Then STOP.
+
+Do not implement the next milestone.
+
+---
+
+# 24. DEVELOPMENT BEHAVIOR
+
+When working inside the repository:
+
+* Inspect the existing project before changing architecture.
+* Reuse good existing components.
+* Refactor duplicated code when justified.
+* Do not rewrite stable areas unnecessarily.
+* Do not delete working functionality merely because you prefer another approach.
+* Keep commits logically organized when git is available.
+* Do not create fake placeholder implementations and label them finished.
+* Do not hide errors.
+* Do not silently remove features.
+* Do not introduce unnecessary dependencies.
+* Keep the code strongly typed.
+* Favor maintainability.
+* Favor composability.
+* Favor readable code.
+* Favor predictable state management.
+
+---
+
+# 25. NO AI-SLOP RULE
+
+Do not generate generic "AI app" UI.
+
+Avoid:
+
+* Excessive rounded cards
+* Random gradients
+* Huge hero copy
+* Generic glass panels
+* Repetitive card grids
+* Excessive shadows
+* Random decorative blobs
+* Generic SaaS dashboards
+* Unnecessary badges
+* Fake statistics
+* Meaningless animations
+* Placeholder content presented as real content
+
+Design every screen intentionally.
+
+The product should feel like it was designed by a strong product designer and implemented by an experienced software engineer.
+
+---
+
+# 26. SECURITY AND INTEGRITY
+
+Even though this is a fictional simulation, maintain proper engineering discipline.
+
+Never trust UI calculations for wallet integrity.
+
+Never allow clients/components to arbitrarily manipulate transaction history.
+
+Validate all state transitions.
+
+Prevent duplicate submissions.
+
+Keep game results authoritative inside the game engine.
+
+Avoid insecure use of local storage for arbitrary executable content.
+
+Sanitize user-editable values where applicable.
+
+---
+
+# 27. PROJECT FILE STRUCTURE
+
+Use a modular structure appropriate to the selected technology.
+
+Conceptually organize the project around areas such as:
+
+```text
+app/
+components/
+features/
+games/
+    coin-flip/
+    roulette/
+    blackjack/
+    slots/
+    dice/
+    crash/
+    mines/
+    plinko/
+core/
+    economy/
+    game-engine/
+    persistence/
+    randomness/
+    audio/
+    haptics/
+    analytics/
+    statistics/
+design/
+hooks/
+lib/
+stores/
+types/
+docs/
+tests/
+```
+
+Adjust this structure to the actual framework rather than forcing it blindly.
+
+---
+
+# 28. FIRST EXECUTION RULE
+
+When this prompt is first given to you:
+
+## IMPLEMENT MILESTONE 0 ONLY.
+
+Do not build the casino games.
+
+Do not build Roulette.
+
+Do not build Blackjack.
+
+Do not build Slots.
+
+Do not build the entire application.
+
+Do not create unfinished versions of future features just to "prepare" them visually.
+
+Build the foundation properly.
+
+Then stop and provide the milestone verification report.
+
+After I verify it, I will explicitly tell you to proceed to Milestone 1.
+
+---
+
+# 29. FUTURE-PHASE DISCIPLINE
+
+When I later say:
+
+> "Proceed to Milestone 2"
+
+you must implement Milestone 2 and only Milestone 2.
+
+When I say:
+
+> "Fix the issues"
+
+fix the issues without automatically starting the next milestone.
+
+When I say:
+
+> "Polish the current game"
+
+polish the currently active game without adding new games.
+
+When I say:
+
+> "Add Roulette"
+
+implement Roulette without modifying unrelated future-game systems unless required for proper integration.
+
+When a requirement conflicts with an earlier architectural decision, explain the conflict and choose the smallest change that preserves existing functionality.
+
+---
+
+# 30. SUCCESS CRITERIA
+
+The finished application should eventually feel like a cohesive premium product rather than a collection of mini-games.
+
+The user experience should communicate:
+
+**fictional casino simulation**
++
+**premium native application**
++
+**tactile game experience**
++
+**excellent interaction design**
++
+**clean engineering**
++
+**strong visual identity**
+
+The most important priority order is:
+
+```text
+Reliability
+↓
+Game correctness
+↓
+UX quality
+↓
+Visual quality
+↓
+Animation polish
+↓
+Extra features
+```
+
+Never sacrifice correctness for visual effects.
+
+Never sacrifice usability for spectacle.
+
+Never sacrifice maintainability for speed.
+
+---
+
+# FINAL INSTRUCTION
+
+You are not being asked to finish this entire product in one session.
+
+You are being asked to build it **properly, incrementally, and verifiably**.
+
+At every stage, leave the repository in a working state.
+
+Never rush ahead.
+
+Never implement future milestones without explicit instruction.
+
+## Start with MILESTONE 0 ONLY.
