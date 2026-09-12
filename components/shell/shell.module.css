@@ -1,0 +1,181 @@
+.shell {
+  min-height: 100dvh;
+}
+
+.skipLink {
+  position: absolute;
+  left: 12px;
+  top: calc(env(safe-area-inset-top, 0px) + 12px);
+  z-index: 50;
+  padding: 8px 14px;
+  border-radius: var(--a-radius-md, 12px);
+  font-size: var(--a-type-body, 16px);
+  font-weight: 600;
+  color: var(--a-color-textOnAccent, #14100a);
+  background: var(--a-color-accent, #d0a96f);
+  text-decoration: none;
+  transform: translateY(-200%);
+  opacity: 0;
+  transition:
+    transform var(--a-duration-fast, 140ms) var(--a-ease-standard, ease),
+    opacity var(--a-duration-fast, 140ms) var(--a-ease-standard, ease);
+}
+
+.skipLink:focus-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.main {
+  padding: calc(var(--a-safe-top, 0px) + 16px) 20px calc(92px + var(--a-safe-bottom, 0px));
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  display: none;
+}
+
+.tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: flex;
+  padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px));
+  background: color-mix(in srgb, var(--a-color-background, #0a0d13) 82%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-top: 1px solid var(--a-color-border, rgba(233, 236, 244, 0.16));
+}
+
+.tabItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  flex: 1;
+  min-height: 48px;
+  color: var(--a-color-textMuted, #7d8494);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: var(--a-radius-md, 12px);
+  transition:
+    color var(--a-duration-fast, 140ms) var(--a-ease-standard, ease),
+    background-color var(--a-duration-fast, 140ms) var(--a-ease-standard, ease);
+}
+
+.tabItem[data-active] {
+  color: var(--a-color-accent, #d0a96f);
+}
+
+.tabIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+}
+
+.tabLabel {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 768px) {
+  .shell {
+    display: flex;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: none;
+    width: 232px;
+    height: 100dvh;
+    padding: calc(env(safe-area-inset-top, 0px) + 20px) 14px 20px;
+    border-right: 1px solid var(--a-color-border, rgba(233, 236, 244, 0.16));
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 10px;
+    color: var(--a-color-textPrimary, #e9ecf4);
+    text-decoration: none;
+  }
+
+  .brandMark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    color: var(--a-color-textOnAccent, #14100a);
+    background: var(--a-color-accent, #d0a96f);
+  }
+
+  .brandName {
+    font-size: var(--a-type-body, 16px);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .navItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 36px;
+    padding: 0 12px;
+    border-radius: 9px;
+    font-size: var(--a-type-subheadline, 15px);
+    color: var(--a-color-textSecondary, #b9bfcc);
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+      background-color var(--a-duration-fast, 140ms) var(--a-ease-standard, ease),
+      color var(--a-duration-fast, 140ms) var(--a-ease-standard, ease);
+  }
+
+  .navItem[data-active] {
+    background: var(--a-color-accentSoft, rgba(208, 169, 111, 0.16));
+    color: var(--a-color-textPrimary, #e9ecf4);
+  }
+
+  @media (hover: hover) {
+    .navItem:hover {
+      background: var(--a-color-surfacePressed, #1b2130);
+    }
+  }
+
+  .version {
+    margin: auto 12px 0;
+    font-size: var(--a-type-caption, 12px);
+    color: var(--a-color-textMuted, #7d8494);
+  }
+
+  .main {
+    flex: 1;
+    width: 100%;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 32px);
+    padding-bottom: 64px;
+    max-width: 720px;
+  }
+
+  .tabbar {
+    display: none;
+  }
+}

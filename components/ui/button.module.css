@@ -1,0 +1,108 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--a-radius-md, 12px);
+  font-family: var(--a-font-sans, system-ui, sans-serif);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform var(--a-duration-quick, 80ms) var(--a-ease-out, ease),
+    background-color var(--a-duration-fast, 140ms) var(--a-ease-standard, ease),
+    border-color var(--a-duration-fast, 140ms) var(--a-ease-standard, ease),
+    color var(--a-duration-fast, 140ms) var(--a-ease-standard, ease),
+    box-shadow var(--a-duration-fast, 140ms) var(--a-ease-standard, ease);
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: default;
+  transform: none;
+}
+
+.md {
+  min-height: 44px;
+  padding: 0 18px;
+  font-size: var(--a-type-subheadline, 15px);
+}
+
+.lg {
+  min-height: 52px;
+  padding: 0 22px;
+  font-size: var(--a-type-body, 16px);
+}
+
+.primary {
+  background: var(--a-color-accent, #d0a96f);
+  color: var(--a-color-textOnAccent, #14100a);
+}
+
+.primary:active {
+  background: var(--a-color-accentPressed, #b98e52);
+}
+
+.primary:focus-visible {
+  outline-color: var(--a-color-accent, #d0a96f);
+}
+
+.secondary {
+  background: var(--a-color-surface, #11151f);
+  color: var(--a-color-textPrimary, #e9ecf4);
+  border-color: var(--a-color-border, rgba(233, 236, 244, 0.16));
+}
+
+.secondary:active {
+  background: var(--a-color-surfacePressed, #1b2130);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--a-color-accent, #d0a96f);
+}
+
+.ghost:active {
+  color: var(--a-color-accentPressed, #b98e52);
+}
+
+.danger {
+  background: var(--a-color-dangerBg, rgba(255, 69, 58, 0.16));
+  color: var(--a-color-danger, #ff453a);
+}
+
+.danger:active {
+  background: var(--a-color-dangerBg, rgba(255, 69, 58, 0.24));
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (hover: hover) {
+  .secondary:hover {
+    border-color: var(--a-color-borderStrong, rgba(233, 236, 244, 0.28));
+  }
+
+  .ghost:hover {
+    color: var(--a-color-accentHover, #e0c18d);
+  }
+
+  .primary:hover {
+    background: var(--a-color-accentHover, #e0c18d);
+  }
+}
