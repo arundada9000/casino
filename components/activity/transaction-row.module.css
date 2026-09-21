@@ -1,0 +1,9 @@
+.amount {
+  font-family: var(--a-font-mono, ui-monospace, monospace);
+  font-size: var(--a-type-footnote, 13px);
+  color: var(--a-color-textSecondary, #b9bfcc);
+}
+
+.amount[data-positive] {
+  color: var(--a-color-success, #30d158);
+}

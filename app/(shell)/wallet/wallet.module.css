@@ -1,0 +1,31 @@
+.trend {
+  margin: 16px 0 4px;
+  padding: 14px 16px 16px;
+  background: var(--a-color-surface, #11151f);
+  border: 1px solid var(--a-color-border, rgba(233, 236, 244, 0.16));
+  border-radius: var(--a-radius-lg, 16px);
+}
+
+.trendHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
+.trendTitle {
+  margin: 0;
+  font-size: var(--a-type-caption, 12px);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--a-color-textMuted, #7d8494);
+}
+
+.trendRange {
+  margin: 0;
+  font-size: var(--a-type-caption, 12px);
+  font-variant-numeric: tabular-nums;
+  color: var(--a-color-textSecondary, #b9bfcc);
+}
