@@ -1,0 +1,27 @@
+.nameField {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+}
+
+.nameInput {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 12px;
+  font: inherit;
+  font-size: var(--a-type-body, 16px);
+  color: var(--a-color-textPrimary, #e9ecf4);
+  background: var(--a-color-surfaceInset, rgba(0, 0, 0, 0.24));
+  border: 1px solid var(--a-color-border, rgba(233, 236, 244, 0.16));
+  border-radius: var(--a-radius-md, 12px);
+}
+
+.nameInput::placeholder {
+  color: var(--a-color-textMuted, #7d8494);
+}
+
+.nameInput:focus-visible {
+  outline: 2px solid var(--a-color-focusRing, #d0a96f);
+  outline-offset: 2px;
+}

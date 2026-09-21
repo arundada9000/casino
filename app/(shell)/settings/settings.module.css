@@ -1,0 +1,39 @@
+.groupBlock {
+  margin: 0 0 24px;
+}
+
+.groupTitle {
+  margin: 0 0 8px 20px;
+  font-size: var(--a-type-caption, 12px);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--a-color-textMuted, #7d8494);
+}
+
+.surface {
+  padding: 14px 16px;
+  background: var(--a-color-surface, #11151f);
+  border: 1px solid var(--a-color-border, rgba(233, 236, 244, 0.16));
+  border-radius: var(--a-radius-lg, 16px);
+}
+
+.volumeControl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider {
+  width: 132px;
+  accent-color: var(--a-color-accent, #d0a96f);
+}
+
+.volumeValue {
+  min-width: 34px;
+  font-size: var(--a-type-footnote, 13px);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--a-color-textPrimary, #e9ecf4);
+}
