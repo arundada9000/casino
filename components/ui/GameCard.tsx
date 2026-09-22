@@ -1,45 +1,52 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import type { GameDefinition } from "@/core/game-engine";
-import { LockIcon, PlayIcon, SparkleIcon } from "./icons";
+import { gameIdentity } from "./game-identity";
+import { ChevronRightIcon, LockIcon } from "./icons";
 
 import styles from "./game-card.module.css";
 
 export function GameCard({ game, href }: { game: GameDefinition; href?: string }) {
   const implemented = game.availability === "implemented";
+  const { mark: Mark, tint } = gameIdentity(game.id);
   const label = `${game.name}, milestone ${game.milestone}`;
+  const visual = { "--game-tint": tint } as CSSProperties;
+
   const inner = (
     <>
-      <div className={styles.icon}>
-        <SparkleIcon size={22} />
-      </div>
-      <div className={styles.body}>
+      <span className={styles.mark} aria-hidden="true">
+        <Mark size={24} />
+      </span>
+      <span className={styles.body}>
         <h3 className={styles.name}>{game.name}</h3>
-        <p className={styles.description}>{game.description}</p>
-      </div>
-      <div className={styles.meta}>
-        <span className={styles.pill} data-implemented={implemented || undefined}>
-          {implemented ? (
-            <>
-              <PlayIcon size={12} /> Playable
-            </>
-          ) : (
-            <>
-              <LockIcon size={12} /> Milestone {game.milestone}
-            </>
-          )}
-        </span>
-      </div>
+        <span className={styles.description}>{game.description}</span>
+      </span>
+      <span className={styles.goto} aria-hidden="true">
+        {implemented ? <ChevronRightIcon size={18} /> : <LockIcon size={16} />}
+      </span>
     </>
   );
+
   if (implemented && href) {
     return (
-      <Link href={href} className={styles.card} data-implemented={true} aria-label={label}>
+      <Link
+        href={href}
+        className={styles.card}
+        style={visual}
+        aria-label={`${game.name} - play`}
+      >
         {inner}
       </Link>
     );
   }
+
   return (
-    <article className={styles.card} data-implemented={implemented || undefined} aria-label={label}>
+    <article
+      className={styles.card}
+      style={visual}
+      data-locked={true}
+      aria-label={`${game.name} - coming soon`}
+    >
       {inner}
     </article>
   );

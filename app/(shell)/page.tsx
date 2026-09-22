@@ -2,21 +2,28 @@
 
 import { useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { LargeTitle } from "@/components/ui/LargeTitle";
 import { Button } from "@/components/ui/Button";
 import { GameCard } from "@/components/ui/GameCard";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { ListGroup } from "@/components/ui/ListRow";
 import { TransactionRow } from "@/components/activity/TransactionRow";
-import { BalanceCard } from "@/components/wallet/BalanceCard";
-import { ChevronRightIcon, ClockIcon, GiftIcon } from "@/components/ui/icons";
+import {
+  ChevronRightIcon,
+  ClockIcon,
+  GiftIcon,
+  LogoIcon,
+} from "@/components/ui/icons";
 import { useEconomyStore } from "@/stores/economy";
 import { useSettingsStore } from "@/stores/settings";
 import { useMounted } from "@/hooks/useMounted";
 import { GAME_REGISTRY } from "@/core/game-engine";
+import { INITIAL_ALLOCATION } from "@/core/economy";
 import { recentTransactions } from "@/lib/ledger";
+import { formatCredits } from "@/lib/format";
 
 import styles from "./home.module.css";
+
+const FEATURED_COUNT = 4;
 
 export default function HomePage() {
   const router = useRouter();
@@ -37,54 +44,119 @@ export default function HomePage() {
     return name ? `${base}, ${name}` : base;
   }, [mounted, profileName]);
 
-  const recent = recentTransactions({ transactions }, 3);
+  const settledRounds = useMemo(
+    () => transactions.filter((transaction) => transaction.type === "bet").length,
+    [transactions],
+  );
+  const netSinceStart = balance - INITIAL_ALLOCATION;
+  const netLabel = `${netSinceStart < 0 ? "-" : "+"}${formatCredits(Math.abs(netSinceStart))}`;
+
+  const recent = recentTransactions({ transactions }, 2);
 
   return (
     <div>
-      <LargeTitle subtitle="A premium fictional casino simulation">
-        {greeting}
-      </LargeTitle>
+      <header className={styles.header}>
+        <h1 className={styles.pageTitle}>{greeting}</h1>
+        <p className={styles.subtitle}>Ten games on the floor. One house to beat.</p>
+      </header>
 
       {!onboardingDismissed && mounted ? (
-        <section className={styles.welcome} aria-label="Welcome">
-          <span className={styles.welcomeIcon}>
-            <GiftIcon size={22} />
+        <section className={styles.onboard} aria-label="Tour starter">
+          <span className={styles.onboardIcon}>
+            <GiftIcon size={17} />
           </span>
-          <div className={styles.welcomeBody}>
-            <h2>Welcome to Aurelia</h2>
-            <p>
-              You started with 25,000 virtual credits. Everything here is
-              fictional: no deposits, no withdrawals, no real money.
-            </p>
+          <p className={styles.onboardBody}>
+            <strong>Your first 25,000 credits are on the house.</strong>
+            <span>
+              Start with the foundation floor and learn how the ledger works.
+            </span>
+          </p>
+          <div className={styles.onboardActions}>
+            <Button
+              variant="primary"
+              size="md"
+              onClick={() => router.push("/foundation")}
+            >
+              Begin
+            </Button>
+            <button
+              type="button"
+              className={styles.onboardDismiss}
+              onClick={() => setOnboardingDismissed(true)}
+            >
+              Not now
+            </button>
           </div>
-          <Button variant="primary" size="md" onClick={() => setOnboardingDismissed(true)}>
-            Got it
-          </Button>
         </section>
       ) : null}
 
-      <div className={styles.section}>
-        <BalanceCard
-          balance={balance}
-          subtitle="Fictional credits · simulation only"
-          onPress={() => router.push("/wallet")}
-        />
-      </div>
+      <button
+        type="button"
+        className={styles.hero}
+        onClick={() => router.push("/wallet")}
+        aria-label="Open the house account ledger"
+      >
+        <span className={styles.watermark} aria-hidden="true">
+          <LogoIcon size={112} />
+        </span>
+        <span className={styles.heroTop}>
+          <span className={styles.heroLabel}>
+            <span className={styles.heroLabelIcon}>
+              <LogoIcon size={12} />
+            </span>
+            House account
+          </span>
+          <span className={styles.medallion} aria-hidden="true">
+            <LogoIcon size={17} />
+          </span>
+        </span>
+        <span className={styles.heroBalance}>
+          <span className={styles.heroAmount}>{formatCredits(balance)}</span>
+          <span className={styles.heroUnit}>credits</span>
+        </span>
+        <span className={styles.heroNote}>Fictional credits - simulation only</span>
+        <span className={styles.heroMeta}>
+          <span className={styles.metaItem}>
+            <span className={styles.metaKey}>Rounds played</span>
+            <span className={styles.metaValue}>{settledRounds}</span>
+          </span>
+          <span className={styles.metaItem}>
+            <span className={styles.metaKey}>Net since opening</span>
+            <span
+              className={styles.metaValue}
+              data-positive={netSinceStart > 0 || undefined}
+            >
+              {netLabel}
+            </span>
+          </span>
+          <span className={styles.metaItem}>
+            <span className={styles.metaKey}>Floor games</span>
+            <span className={styles.metaValue}>{GAME_REGISTRY.length}</span>
+          </span>
+          <span className={styles.heroGoto} aria-hidden="true">
+            <ChevronRightIcon size={18} />
+          </span>
+        </span>
+      </button>
 
       <section className={styles.section} aria-label="Featured games">
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Games</h2>
+          <span className={styles.sectionCount}>
+            {FEATURED_COUNT} of {GAME_REGISTRY.length}
+          </span>
           <Button
             variant="ghost"
             size="md"
+            className={styles.seeAll}
             onClick={() => router.push("/games")}
-            icon={<ChevronRightIcon size={18} />}
+            icon={<ChevronRightIcon size={16} />}
           >
             See all
           </Button>
         </div>
         <div className={styles.grid}>
-          {GAME_REGISTRY.slice(0, 4).map((game) => (
+          {GAME_REGISTRY.slice(0, FEATURED_COUNT).map((game) => (
             <GameCard
               key={game.id}
               game={game}
@@ -100,12 +172,13 @@ export default function HomePage() {
 
       <section className={styles.section} aria-label="Recent activity">
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>Activity</h2>
+          <h2 className={styles.sectionTitle}>Recent activity</h2>
           <Button
             variant="ghost"
             size="md"
+            className={styles.seeAll}
             onClick={() => router.push("/activity")}
-            icon={<ChevronRightIcon size={18} />}
+            icon={<ChevronRightIcon size={16} />}
           >
             See all
           </Button>
